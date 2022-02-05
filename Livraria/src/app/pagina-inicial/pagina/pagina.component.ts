@@ -9,19 +9,19 @@ import { Router } from '@angular/router';
 })
 export class PaginaComponent implements OnInit {
 
-  constructor( private route: Router) { }
+  constructor(private route: Router) { }
 
   ngOnInit() {
   }
 
-  cadastrar(){
+  cadastrar() {
     this.route.navigate(['/cadastrar/'])
- }
- deletar(){
-  this.route.navigate(['/deletar/'])
-}
-cadastraradm(){
-  this.route.navigate(['/cadastraradm/'])
-}
+  }
+  deletar() {
+    this.route.navigate(['/deletar/'])
+  }
+  cadastraradm() {
+    this.route.navigate(['/cadastraradm/'])
+  }
 
 }
