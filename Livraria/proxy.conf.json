@@ -1,8 +1,8 @@
 {
-"/api/*": {
-    "target": "http://localhost:3000/",
-    "secure": false,
-    "loglevel":"debug",
-    "changeDrigin": true
-}
+    "/api/*": {
+        "target": "http://localhost:3000/",
+        "secure": false,
+        "logLevel": "debug",
+        "changeDrigin": true
+    }
 }

@@ -9,7 +9,7 @@ export class UsuarioService {
 
   buscarUsuario() {
     return new Promise((resolvido, rejeitado) => {
-      fetch('api/buscarUsuario',
+      fetch('api/buscar_usuario',
         {
           method: 'POST',
           headers: {
