@@ -26,7 +26,8 @@ export class InicioComponent implements OnInit {
     })
   }
 
-  logar(){
-    this.route.navigate(['/pagina-principal/'])
+  loginadm(){
+    this.route.navigate(['/loginadm'])
  }
+
 }

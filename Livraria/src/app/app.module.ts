@@ -9,6 +9,7 @@ import { PaginaComponent } from './pagina-inicial/pagina/pagina.component';
 import { CadastrarComponent } from './pagina-inicial/cadastrar/cadastrar.component';
 import { DeletarComponent } from './pagina-inicial/deletar/deletar.component';
 import { CadastraradmComponent } from './pagina-inicial/cadastraradm/cadastraradm.component';
+import { LoginadmComponent } from './login/loginadm/loginadm.component';
 
 const routes: Routes=[
   {
@@ -17,7 +18,7 @@ const routes: Routes=[
     canActivate: []
   },
   {
-    path:'pagina-principal',
+    path:'acesso',
     component : PaginaComponent,
     canActivate: []
   },
@@ -36,6 +37,13 @@ const routes: Routes=[
     component : CadastraradmComponent,
     canActivate: []
   }
+  ,
+  {
+    path:'loginadm',
+    component : LoginadmComponent,
+    canActivate: []
+  }
+
 ];
 
 
@@ -46,7 +54,8 @@ const routes: Routes=[
     PaginaComponent,
     CadastrarComponent,
     DeletarComponent,
-    CadastraradmComponent
+    CadastraradmComponent,
+    LoginadmComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
