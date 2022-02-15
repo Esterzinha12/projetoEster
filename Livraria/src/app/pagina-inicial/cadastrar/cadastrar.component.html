@@ -3,6 +3,7 @@
     <div >
       <img style="margin: 0px 60px 50px 8px" src="/assets/LOGO_MARCA_LOJA_SEBO_ALTERNATIVO-removebg-preview.png">
     </div>
+    <a>CADASTRAR LIVROS</a>
     <div>
       <input type="text" placeholder="Título" style="margin: 10px 0px 10px 20px;">
     </div>
@@ -14,7 +15,7 @@
     </div>
     <div>
       <label for="dinheiro">R$</label>
-      <input type="number" name="quantity" step="0.01" min="0.01" style="margin: 10px 0px 10px 0px;" placeholder="Valor">
+      <input type="number" name="quantity" step="0.01" min="0.01" style="margin: 10px 0px 10px 0px;" placeholder="Preço">
     </div>
     <div>
       <input type="number" placeholder="Quantidade" style="margin: 10px 0px 10px 20px;">
@@ -23,7 +24,7 @@
       <input type="number" placeholder="Código Livro" style="margin: 10px 0px 10px 20px;">
     </div>
     <div>
-      <button style="color: #FFEBCC">CADASTRAR</button>
+      <button style="color: #FFEBCC" (click)='cadastrado()'>CADASTRAR</button>
     </div>
 
   </div>

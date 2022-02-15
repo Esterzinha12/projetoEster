@@ -13,4 +13,8 @@ export class CadastrarComponent implements OnInit {
   ngOnInit() {
   }
 
+  cadastrado(){
+    alert('Livro cadastrado com sucesso!')
+  }
+
 }

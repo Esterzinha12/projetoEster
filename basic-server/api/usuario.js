@@ -1,7 +1,7 @@
 inserirRota('/buscar_usuario', function (dados, resposta) {
     console.log(dados);
 
-    database(`SELECT*FROM USER`)
+    database(`SELECT*FROM ADM`)
         .then(result => {
             console.log('Usuario inserido com sucesso!');
             resposta({ list: result });
@@ -14,17 +14,17 @@ inserirRota('/buscar_usuario', function (dados, resposta) {
 inserirRota('/criar_usuario', function (dados, resposta) {
     console.log(dados);
 
-    if (!dados.nome) {
+    if (!dados.usuario) {
         return resposta({ erro: 'É necessario preencher o nome' });
     }
 
-    if (!dados.sobrenome) {
+    if (!dados.senha) {
         return resposta({ erro: 'É necessario preencher o sobrenome' });
     }
 
-    database(`INSERT INTO USER(
-        NOME, SOBRENOME) VALUES
-        ("${dados.nome}", "${dados.sobrenome}")`)
+    database(`INSERT INTO ADM(
+        USUARIO, SENHA) VALUES
+        ("${dados.usuario}", "${dados.senha}")`)
         .then(result => {
             console.log('Usuario inserido com sucesso!');
             resposta({ message: 'Usuario inserido com sucesso!' });
@@ -33,6 +33,8 @@ inserirRota('/criar_usuario', function (dados, resposta) {
             resposta({ message: 'Erro ao inserir o usuario!' });
         });
 });
+
+
 
 inserirRota('/excluir_usuario', function (dados, resposta) {
     console.log(dados);
