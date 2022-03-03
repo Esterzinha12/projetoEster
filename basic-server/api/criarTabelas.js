@@ -1,19 +1,19 @@
-database(`CREATE TABLE IF NOT EXISTS TESTE (
-        ID INTEGER PRIMARY KEY AUTOINCREMENT,
-        NOME varchar(30),
-        NUMERO int
-        )`).then(result => {
-    console.log('TABELA CRIADA COM SUCESSO!');
-}).catch(erro => {
-    console.log('TABELA COM ERRO!');
-});
 
-database(`CREATE TABLE IF NOT EXISTS USER (
-    ID INTEGER PRIMARY KEY AUTOINCREMENT,
-    NOME varchar(30),
-    SOBRENOME varchar(60)
+database(`CREATE TABLE IF NOT EXISTS ADM (
+    USUARIO VARCHAR(45) NOT NULL PRIMARY KEY ,
+    SENHA INT NOT NULL
     )`).then(result => {
+
 console.log('TABELA CRIADA COM SUCESSO!');
 }).catch(erro => {
 console.log('TABELA COM ERRO!');
 });
+
+// database(`INSERT INTO ADM VALUES (
+//     'esterzinha12',
+//     123 
+// )`).then(result => {
+// console.log('TABELA CRIADA COM SUCESSO!');
+// }).catch(erro => {
+// console.log('TABELA COM ERRO!123');
+// });

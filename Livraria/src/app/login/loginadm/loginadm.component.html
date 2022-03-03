@@ -2,10 +2,10 @@
   <div class="divPai">
     <a>LOGIN</a>
     <div class="divizinhas">
-      <input type="text" placeholder="Usuário">
+      <input type="text" placeholder="Usuário" [(ngModel)] ="usuario">
     </div>
     <div class="divizinhas">
-      <input type="password" placeholder="Senha">
+      <input type="password" placeholder="Senha" [(ngModel)] ="senha">
     </div >
     <button style="color: #FFEBCC" (click)='acesso()'>ENTRAR</button>
   </div>

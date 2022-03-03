@@ -13,4 +13,7 @@ export class DeletarComponent implements OnInit {
   ngOnInit() {
   }
 
+  deletado(){
+    alert('Livro deletado com sucesso!')
+  }
 }

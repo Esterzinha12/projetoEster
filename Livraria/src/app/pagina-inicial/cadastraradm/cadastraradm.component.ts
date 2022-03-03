@@ -13,4 +13,7 @@ export class CadastraradmComponent implements OnInit {
   ngOnInit() {
   }
 
+  cadastradoadm(){
+    alert('Administrador cadastrado com sucesso!')
+  }
 }

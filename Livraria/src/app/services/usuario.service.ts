@@ -20,5 +20,5 @@ export class UsuarioService {
       .catch(rejeitado);
     })
   }
-
+ 
 }
