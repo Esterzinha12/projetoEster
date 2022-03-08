@@ -35,4 +35,8 @@ export class CadastrarComponent implements OnInit {
     this.route.navigate(['/genero/'])
   }
 
+  cadastrado(){
+    alert('Livro cadastrado com sucesso!')
+  }
+
 }
