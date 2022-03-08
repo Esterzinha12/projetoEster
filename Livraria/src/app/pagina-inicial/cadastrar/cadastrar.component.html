@@ -4,27 +4,29 @@
       <img style="margin: 0px 60px 50px 8px" src="/assets/LOGO_MARCA_LOJA_SEBO_ALTERNATIVO-removebg-preview.png">
     </div>
     <a>CADASTRAR LIVROS</a>
+    
     <div>
-      <input type="text" placeholder="Título" style="margin: 10px 0px 10px 20px;">
+      <input type="text" placeholder="Título" style="margin: 10px 0px 10px 20px;" [(ngModel)] ="titulo">
     </div>
     <div>
-      <input type="text" placeholder="Autor" style="margin: 10px 0px 10px 20px;">
-    </div>
-    <div>
-      <input type="text" placeholder="Gênero" style="margin: 10px 0px 10px 20px;">
+      <input type="text" placeholder="Autor" style="margin: 10px 0px 10px 20px;" [(ngModel)] ="autor">
     </div>
     <div>
       <label for="dinheiro">R$</label>
-      <input type="number" name="quantity" step="0.01" min="0.01" style="margin: 10px 0px 10px 0px;" placeholder="Preço">
+      <input type="number" name="quantity" step="0.01" min="0.01" style="margin: 10px 0px 10px 0px;" placeholder="Preço" [(ngModel)] ="valor">
     </div>
     <div>
-      <input type="number" placeholder="Quantidade" style="margin: 10px 0px 10px 20px;">
+      <input type="text" placeholder="Gênero" style="margin: 10px 0px 10px 20px;" [(ngModel)] ="genero">
+      <button style="color: #FFEBCC" (click)='cadasgenero()'>CADASTRAR GÊNERO</button>
     </div>
     <div>
-      <input type="number" placeholder="Código Livro" style="margin: 10px 0px 10px 20px;">
+      <input type="text" placeholder="Editora" style="margin: 10px 0px 10px 20px;" [(ngModel)] ="editora">
     </div>
     <div>
-      <button style="color: #FFEBCC" (click)='cadastrado()'>CADASTRAR</button>
+      <input type="number" placeholder="Quantidade" style="margin: 10px 0px 10px 20px;" [(ngModel)] ="estoque">
+    </div>
+    <div>
+      <button style="color: #FFEBCC" (click)='cadastrar()'>CADASTRAR</button>
     </div>
 
   </div>

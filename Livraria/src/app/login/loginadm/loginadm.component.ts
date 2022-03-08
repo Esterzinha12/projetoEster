@@ -10,7 +10,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class LoginadmComponent implements OnInit {
 
-  constructor( private route: Router, 
+  constructor(private route: Router,
     private usuarioservico: UsuarioService) { }
 
   ngOnInit() {
@@ -19,29 +19,22 @@ export class LoginadmComponent implements OnInit {
   usuario = '';
   senha = '';
 
-  acesso(){
-    this.usuarioservico.buscarUsuario()
-    .then((resultado:any) => {
-      const find = resultado.list.find(e => e.USUARIO == this.usuario && e.SENHA == this.senha);
-      
-      if (find) {
-        localStorage.setItem('USER', this.usuario);
-        this.route.navigate(['/acesso/']);
-        console.log('Funcionou');   
-        
-      } else {
-        alert('Usuário não cadastrado!');
-        console.log('Não funcionou');
-      }
+  acesso() {
+    this.usuarioservico.login(this.usuario, this.senha)
+      .then((resultado: any) => {
+        if (resultado.user) {
+          console.log('certo', resultado.user);
+          this.route.navigate(['/acesso/']);
 
-    }).catch(erro => {
-      console.log('Erro ao buscar usuarios', erro)
-    })
-   
-      
-    
+        } else {
+          alert('Erro ao fazer login! Verifique usuario e senha')
+        }
+      }).catch(erro => {
+        console.log('Erro ao buscar usuarios', erro)
+      })
+
+
+
   }
-
-
 
 }

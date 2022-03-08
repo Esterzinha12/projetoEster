@@ -1,7 +1,7 @@
 inserirRota('/buscar_usuario', function (dados, resposta) {
     console.log(dados);
 
-    database(`SELECT*FROM ADM`)
+    database(`SELECT * FROM ADM`)
         .then(result => {
             console.log('Usuario inserido com sucesso!');
             resposta({ list: result });
@@ -52,7 +52,7 @@ inserirRota('/excluir_usuario', function (dados, resposta) {
 inserirRota('/login', function (dados, resposta) {
     console.log(dados);
 
-    database(`SELECT*FROM USER WHERE SOBRENOME = "${dados.sobrenome}" AND PASSWORD= "${dados.password}" LIMIT 1`)
+    database(`SELECT * FROM ADM WHERE USUARIO = "${dados.usuario}" AND SENHA= "${dados.senha}" LIMIT 1`)
         .then(result => {
             console.log('result', result);
             resposta({ user: result[0]});
@@ -60,5 +60,7 @@ inserirRota('/login', function (dados, resposta) {
             resposta({ erro: 'Erro ao buscar o usuario!' });
         });
 });
+
+
 
 
