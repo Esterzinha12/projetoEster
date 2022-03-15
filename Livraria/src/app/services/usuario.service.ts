@@ -78,5 +78,41 @@ export class UsuarioService {
     })
   }
 
+  
+  cadaseditora(editora) {
+    return new Promise((resolvido, rejeitado) => {
+      fetch('api/cadaseditora',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            editora: editora
+          })
+        }).then(resultado => resultado.json())
+        .then(resolvido)
+        .catch(rejeitado);
+    })
+  }
 
-}
+  excluir_editora(editora) {
+    return new Promise((resolvido, rejeitado) => {
+      fetch('api/excluir_editora',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            editora: editora
+          })
+        }).then(resultado => resultado.json())
+        .then(resolvido)
+        .catch(rejeitado);
+    })
+  }
+  
+  }
+
+

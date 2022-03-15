@@ -34,6 +34,9 @@ export class CadastrarComponent implements OnInit {
   cadasgenero() {
     this.route.navigate(['/genero/'])
   }
+  cadaseditora() {
+    this.route.navigate(['/editora/'])
+  }
 
   cadastrado(){
     alert('Livro cadastrado com sucesso!')

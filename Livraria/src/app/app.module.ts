@@ -11,6 +11,7 @@ import { DeletarComponent } from './pagina-inicial/deletar/deletar.component';
 import { CadastraradmComponent } from './pagina-inicial/cadastraradm/cadastraradm.component';
 import { LoginadmComponent } from './login/loginadm/loginadm.component';
 import { GeneroComponent } from './pagina-inicial/genero/genero.component';
+import { EditoraComponent } from './pagina-inicial/editora/editora.component';
 
 const routes: Routes=[
   {
@@ -49,7 +50,15 @@ const routes: Routes=[
     path:'genero',
     component : GeneroComponent,
     canActivate: []
+  },
+  
+  {
+    path:'editora',
+    component : EditoraComponent,
+    canActivate: []
   }
+
+
 
 ];
 
@@ -63,7 +72,8 @@ const routes: Routes=[
     DeletarComponent,
     CadastraradmComponent,
     LoginadmComponent,
-    GeneroComponent
+    GeneroComponent,
+    EditoraComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

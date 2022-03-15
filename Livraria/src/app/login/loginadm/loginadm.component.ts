@@ -23,9 +23,8 @@ export class LoginadmComponent implements OnInit {
     this.usuarioservico.login(this.usuario, this.senha)
       .then((resultado: any) => {
         if (resultado.user) {
-          console.log('certo', resultado.user);
+          console.log('certo');
           this.route.navigate(['/acesso/']);
-
         } else {
           alert('Erro ao fazer login! Verifique usuario e senha')
         }

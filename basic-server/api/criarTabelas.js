@@ -1,12 +1,12 @@
 
 database(`CREATE TABLE IF NOT EXISTS LOGINADM (
     USUARIO VARCHAR(45) NOT NULL PRIMARY KEY ,
-    SENHA INTEGER NOT NULL
+    SENHA VARCHAR(45) NOT NULL
     )`).then(result => {
 
-console.log('TABELA CRIADA COM SUCESSO!');
+console.log('TABELA LOGINADM CRIADA COM SUCESSO!');
 }).catch(erro => {
-console.log('TABELA COM ERRO!');
+console.log('TABELA LOGINADM COM ERRO!');
 });
 
 database(`CREATE TABLE IF NOT EXISTS ESTOQUE (
@@ -14,9 +14,9 @@ database(`CREATE TABLE IF NOT EXISTS ESTOQUE (
     QUANTIDADE INTEGER NOT NULL
     )`).then(result => {
 
-console.log('TABELA CRIADA COM SUCESSO!');
+console.log('TABELA ESTOQUE CRIADA COM SUCESSO!');
 }).catch(erro => {
-console.log('TABELA COM ERRO!');
+console.log('TABELA ESTOQUE COM ERRO!');
 });
 
 database(`CREATE TABLE IF NOT EXISTS GENERO (
@@ -24,9 +24,9 @@ database(`CREATE TABLE IF NOT EXISTS GENERO (
     GENERO VARCHAR(45) NOT NULL
     )`).then(result => {
 
-console.log('TABELA CRIADA COM SUCESSO!');
+console.log('TABELA GENERO CRIADA COM SUCESSO!');
 }).catch(erro => {
-console.log('TABELA COM ERRO!');
+console.log('TABELA GENERO COM ERRO!');
 });
 
 
@@ -36,9 +36,9 @@ database(`CREATE TABLE IF NOT EXISTS EDITORA (
     EDITORA VARCHAR(45) NOT NULL
     )`).then(result => {
 
-console.log('TABELA CRIADA COM SUCESSO!');
+console.log('TABELA EDITORA CRIADA COM SUCESSO!');
 }).catch(erro => {
-console.log('TABELA COM ERRO!');
+console.log('TABELA EDITORA COM ERRO!');
 });
 
 database(`CREATE TABLE IF NOT EXISTS CADASTRARLIVRO (

@@ -3,13 +3,13 @@ import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
-  selector: 'app-genero',
-  templateUrl: './genero.component.html',
-  styleUrls: ['./genero.component.css']
+  selector: 'app-editora',
+  templateUrl: './editora.component.html',
+  styleUrls: ['./editora.component.css']
 })
-export class GeneroComponent implements OnInit {
+export class EditoraComponent implements OnInit {
 
-genero='';
+  editora='';
 
   constructor(private route: Router,  
     private usuarioservico: UsuarioService) { }
@@ -17,21 +17,17 @@ genero='';
   ngOnInit() {
   }
 
-  cadasgenero() {
-    if(this.genero!=''){
-      this.usuarioservico.cadasgenero(this.genero)
+  cadaseditora() {
+    if(this.editora!=''){
+      this.usuarioservico.cadaseditora(this.editora)
       .then((resultado: any) => {
         console.log(resultado)
-        alert('Genero cadastrado com sucesso!')
+        alert('Editora cadastrado com sucesso!')
       }).catch(erro => {
-        alert('Erro ao cadastrar genero!')
+        alert('Erro ao cadastrar editora!')
       })
   }else{
     alert('Campos em branco!')
   }
     }
-    
-
-
-  
 }
