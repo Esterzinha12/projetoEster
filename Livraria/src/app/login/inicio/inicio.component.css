@@ -25,7 +25,7 @@ footer{
 .butlogin{
     float: right;
     margin: 50px;
-    border-radius: 30px;
+    border-radius: 10px;
     background-color: #964b00;
     border: none;
     height: 50px;
@@ -64,11 +64,19 @@ main{
     flex-direction: column;
 }
 
-p{
-
+.redes{
+    width: 100%;
+    height: 50px;
+    background-color: #964b00;
+    display: flex;
+    justify-content: right;
 }
 
 .sebo{
     font-size: 16px;
-    font-weight: bold
+    font-weight: bold;
+}
+.fab fa-facebook-f{
+    width: 50px; 
+    height:50px;
 }
