@@ -12,6 +12,12 @@ import { CadastraradmComponent } from './pagina-inicial/cadastraradm/cadastrarad
 import { LoginadmComponent } from './login/loginadm/loginadm.component';
 import { GeneroComponent } from './pagina-inicial/genero/genero.component';
 import { EditoraComponent } from './pagina-inicial/editora/editora.component';
+import { LivroscadsComponent } from './pagina-inicial/livroscads/livroscads.component';
+// import {
+//   SocialLoginModule,
+//   AuthServiceConfig,
+//   GoogleLoginProvider
+// } from "angular-6-social-login-v2";
 
 const routes: Routes=[
   {
@@ -56,12 +62,28 @@ const routes: Routes=[
     path:'editora',
     component : EditoraComponent,
     canActivate: []
+  },
+  {
+    path:'livroscads',
+    component : LivroscadsComponent,
+    canActivate: []
   }
 
 
 
 ];
 
+// export function getAuthServiceConfigs() {
+//   let config = new AuthServiceConfig(
+//     [
+//       {
+//         id: GoogleLoginProvider.PROVIDER_ID,
+//         provider: new GoogleLoginProvider("214907937972-gf4q78bvlr2nhgur0bdlecchcrths7i8.apps.googleusercontent.com"),
+//       }
+//     ]
+//   )
+//   return config
+// };
 
 @NgModule({
   declarations: [
@@ -73,14 +95,21 @@ const routes: Routes=[
     CadastraradmComponent,
     LoginadmComponent,
     GeneroComponent,
-    EditoraComponent
+    EditoraComponent,
+    LivroscadsComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
-    FormsModule 
+    FormsModule ,
+    // SocialLoginModule
   ],
-  providers: [],
+  providers: [
+    // {
+    //   provide: AuthServiceConfig,
+    //   useFactory: getAuthServiceConfigs
+    // }
+  ],
   bootstrap: [AppComponent]
 
   

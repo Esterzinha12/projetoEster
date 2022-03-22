@@ -23,7 +23,7 @@ inserirRota('/select_editora', (dados, resposta) => {
 
 inserirRota('/excluir_editora', function (dados, resposta) {
     console.log(dados);
-    database(`ALTER TABLE EDITORA DROP WHERE CODIGO=1`)
+    database(`DELETE FROM EDITORA WHERE CODIGO = "${dados.CODIGO}"`)
         .then(result => {
             alert('Editora deletado com sucesso!');
             resposta({ list: result });

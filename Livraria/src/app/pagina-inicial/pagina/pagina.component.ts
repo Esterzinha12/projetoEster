@@ -23,5 +23,8 @@ export class PaginaComponent implements OnInit {
   cadastraradm() {
     this.route.navigate(['/cadastraradm/'])
   }
+  livroscads() {
+    this.route.navigate(['/livroscads/'])
+  }
 
 }

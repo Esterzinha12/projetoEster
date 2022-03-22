@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
+// import {
+//   SocialLoginModule,
+//   AuthService,
+//   GoogleLoginProvider
+// } from "angular-6-social-login-v2";
 
 
 @Component({
@@ -11,7 +16,9 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 export class LoginadmComponent implements OnInit {
 
   constructor(private route: Router,
-    private usuarioservico: UsuarioService) { }
+    private usuarioservico: UsuarioService,
+    // private socialAuthService: AuthService
+    ) { }
 
   ngOnInit() {
   }
@@ -31,9 +38,20 @@ export class LoginadmComponent implements OnInit {
       }).catch(erro => {
         console.log('Erro ao buscar usuarios', erro)
       })
-
-
-
   }
 
+
+  // public logarGoogle(socialPlatform: string) {
+  //   let socialPlatformProvider;
+  //   if(socialPlatform == "google"){
+  //     socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
+  // }
+    
+  //   this.socialAuthService.signIn(socialPlatformProvider).then(
+  //   (userData) => {
+  //     console.log(socialPlatform + " sign in data : ", userData);
+  
+  //   }
+  // );
+  // }
 }

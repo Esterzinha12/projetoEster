@@ -62,9 +62,9 @@ database(`CREATE TABLE IF NOT EXISTS CADASTRARLIVRO (
     ON DELETE CASCADE
     ON UPDATE CASCADE
     )`).then(result => {
-console.log('TABELA CRIADA COM SUCESSO!');
+console.log('TABELA CADASTRAR LIVRO CRIADA COM SUCESSO!');
 }).catch(erro => {
-console.log('TABELA COM ERRO!');
+console.log('TABELA CADASTRAR LIVRO COM ERRO!');
 });
 
 database(`CREATE TABLE IF NOT EXISTS PESSOA (
@@ -74,9 +74,9 @@ database(`CREATE TABLE IF NOT EXISTS PESSOA (
     NASCIMENTO DATE
     )`).then(result => {
 
-console.log('TABELA CRIADA COM SUCESSO!');
+console.log('TABELA PESSOA CRIADA COM SUCESSO!');
 }).catch(erro => {
-console.log('TABELA COM ERRO!');
+console.log('TABELA PESSOA COM ERRO!');
 });
 
 database(`CREATE TABLE IF NOT EXISTS CADASTRARADM (
@@ -89,9 +89,9 @@ database(`CREATE TABLE IF NOT EXISTS CADASTRARADM (
     ON UPDATE CASCADE
     )`).then(result => {
 
-console.log('TABELA CRIADA COM SUCESSO!');
+console.log('TABELA CADASTRARADM CRIADA COM SUCESSO!');
 }).catch(erro => {
-console.log('TABELA COM ERRO!');
+console.log('TABELA CADASTRARADM COM ERRO!');
 });
 
 

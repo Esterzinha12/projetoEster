@@ -6,11 +6,12 @@ import { DeletarComponent } from './deletar/deletar.component';
 import { CadastraradmComponent } from './cadastraradm/cadastraradm.component';
 import { GeneroComponent } from './genero/genero.component';
 import { EditoraComponent } from './editora/editora.component';
+import { LivroscadsComponent } from './livroscads/livroscads.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [PaginaComponent, CadastrarComponent, DeletarComponent, CadastraradmComponent, GeneroComponent, EditoraComponent]
+  declarations: [PaginaComponent, CadastrarComponent, DeletarComponent, CadastraradmComponent, GeneroComponent, EditoraComponent, LivroscadsComponent]
 })
 export class PaginaInicialModule { }
