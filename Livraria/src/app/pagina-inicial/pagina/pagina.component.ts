@@ -17,9 +17,6 @@ export class PaginaComponent implements OnInit {
   cadastrar() {
     this.route.navigate(['/cadastrar/'])
   }
-  deletar() {
-    this.route.navigate(['/deletar/'])
-  }
   cadastraradm() {
     this.route.navigate(['/cadastraradm/'])
   }

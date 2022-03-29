@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
-// import {
-//   SocialLoginModule,
-//   AuthService,
-//   GoogleLoginProvider
-// } from "angular-6-social-login-v2";
+import {
+  AuthService,
+  GoogleLoginProvider
+} from "angular-6-social-login-v2";
 
 
 @Component({
@@ -17,7 +16,7 @@ export class LoginadmComponent implements OnInit {
 
   constructor(private route: Router,
     private usuarioservico: UsuarioService,
-    // private socialAuthService: AuthService
+    private socialAuthService: AuthService
     ) { }
 
   ngOnInit() {
@@ -41,17 +40,16 @@ export class LoginadmComponent implements OnInit {
   }
 
 
-  // public logarGoogle(socialPlatform: string) {
-  //   let socialPlatformProvider;
-  //   if(socialPlatform == "google"){
-  //     socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
-  // }
+  public logarGoogle(socialPlatform: string) {
+    let socialPlatformProvider;
+
+      socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
     
-  //   this.socialAuthService.signIn(socialPlatformProvider).then(
-  //   (userData) => {
-  //     console.log(socialPlatform + " sign in data : ", userData);
-  
-  //   }
-  // );
-  // }
+    this.socialAuthService.signIn(socialPlatformProvider).then(
+    (userData) => {
+      console.log(socialPlatform + " sign in data : ", userData);
+        this.route.navigate(['/acesso/'])
+    }
+  );
+  }
 }

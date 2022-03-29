@@ -21,7 +21,7 @@ inserirRota('/cadastrar', function (dados, resposta) {
     }
 
     database(`INSERT INTO CADASTRARLIVRO(
-        TITULO, AUTOR, VALOR, GENERO, EDITORA, ESTOQUE) VALUES
+        TITULO, AUTOR, VALOR, GENERO_CODIGO, EDITORA_CODIGO, ESTOQUE) VALUES
        (" ${dados.titulo}", "${dados.autor}","${dados.valor}" ,"${dados.genero}" , "${dados.editora}", "${dados.estoque}")`)
        .then(result => {
            console.log('result', result);
@@ -30,3 +30,25 @@ inserirRota('/cadastrar', function (dados, resposta) {
            resposta({ erro: 'Erro ao inserir livro!' });
        });
 });
+
+inserirRota('/select_livros', (dados, resposta) => {
+    console.log(dados);
+    database(`SELECT * FROM CADASTRARLIVRO `).then(result => {
+        resposta({ resposta: result });
+    }).catch(erro => {
+        resposta({ resposta: erro });
+    });
+});
+
+inserirRota('/excluir_livro', function (dados, resposta) {
+    console.log(dados);
+    database(`ALTER TABLE CADASTRARLIVRO DROP WHERE CODIGO=${dados.codigo}`)
+        .then(result => {
+            alert('Livro deletado com sucesso!');
+            resposta({ list: result });
+        }).catch(erro => {
+            console.log('Erro ao deletar o livro!');
+            alert({ erro: 'Erro ao deletar o livro' });
+        });
+});
+

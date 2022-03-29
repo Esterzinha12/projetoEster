@@ -36,10 +36,10 @@ inserirRota('/criar_usuario', function (dados, resposta) {
 
 
 
-inserirRota('/excluir_usuario', function (dados, resposta) {
+inserirRota('/excluir_adm', function (dados, resposta) {
     console.log(dados);
 
-    database(`ALTER TABLE USER DROP WHERE ID=1 `)
+    database(`ALTER TABLE LOGINADM DROP WHERE ID=1 `)
         .then(result => {
             console.log('Usuario inserido com sucesso!');
             resposta({ list: result });
@@ -51,6 +51,13 @@ inserirRota('/excluir_usuario', function (dados, resposta) {
 
 inserirRota('/login', function (dados, resposta) {
     console.log(dados);
+
+    
+    database(`SELECT * FROM LOGINADM `)
+        .then(result => {
+            console.log('result', result);
+        }).catch(erro => {
+        });
 
     database(`SELECT * FROM LOGINADM WHERE USUARIO = "${dados.usuario}" AND SENHA= "${dados.senha}" LIMIT 1`)
         .then(result => {

@@ -30,4 +30,8 @@ export class EditoraComponent implements OnInit {
     alert('Campos em branco!')
   }
     }
+
+    voltar() {
+      this.route.navigate(['/acesso/'])
+    }
 }

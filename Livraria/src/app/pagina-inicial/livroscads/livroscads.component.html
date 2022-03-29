@@ -1,10 +1,14 @@
 <body>
   <div>
     <div>
-      <img style="margin: 0px 60px 50px 8px" src="/assets/LOGO_MARCA_LOJA_SEBO_ALTERNATIVO-removebg-preview.png">
+      <img style="margin: 42px 60px 53px 60px" src="/assets/LOGO_MARCA_LOJA_SEBO_ALTERNATIVO-removebg-preview.png">
     </div>
     <div><a>LIVROS CADASTRADOS</a></div>
-    
+    <div *ngFor="let livro of listaLivros; let i= index">
+      {{livro.TITULO}}
+
+      <button (click)="excluir(i)"></button>
+    </div>
    
 
   </div>

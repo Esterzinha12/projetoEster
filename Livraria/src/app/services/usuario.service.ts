@@ -61,6 +61,39 @@ export class UsuarioService {
     })
   }
 
+  listarLivros() {
+    return new Promise((resolvido, rejeitado) => {
+      fetch('api/select_livros',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+          
+          })
+        }).then(resultado => resultado.json())
+        .then(resolvido)
+        .catch(rejeitado);
+    })
+  }
+  excluir_livro(codigo) {
+    return new Promise((resolvido, rejeitado) => {
+      fetch('api/excluir_genero',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+           codigo: codigo
+          })
+        }).then(resultado => resultado.json())
+        .then(resolvido)
+        .catch(rejeitado);
+    })
+  }
+
   cadasgenero(genero) {
     return new Promise((resolvido, rejeitado) => {
       fetch('api/cadasgenero',
@@ -78,6 +111,19 @@ export class UsuarioService {
     })
   }
 
+  select_genero() {
+    return new Promise((resolvido, rejeitado) => {
+      fetch('api/select_genero',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+        }).then(resultado => resultado.json())
+        .then(resolvido)
+        .catch(rejeitado);
+    })
+  }
   
   cadaseditora(editora) {
     return new Promise((resolvido, rejeitado) => {
@@ -106,6 +152,23 @@ export class UsuarioService {
           },
           body: JSON.stringify({
             editora: editora
+          })
+        }).then(resultado => resultado.json())
+        .then(resolvido)
+        .catch(rejeitado);
+    })
+  }
+  
+  excluir_genero(genero) {
+    return new Promise((resolvido, rejeitado) => {
+      fetch('api/excluir_genero',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            genero : genero
           })
         }).then(resultado => resultado.json())
         .then(resolvido)

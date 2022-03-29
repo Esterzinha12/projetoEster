@@ -15,7 +15,7 @@ inserirRota('/cadasgenero', function (dados, resposta) {
 inserirRota('/select_genero', (dados, resposta) => {
     console.log(dados);
     database(`SELECT * FROM GENERO `).then(result => {
-        resposta({ resposta: result });
+        resposta(result);
     }).catch(erro => {
         resposta({ resposta: erro });
     });

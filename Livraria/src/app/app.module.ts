@@ -7,17 +7,16 @@ import { InicioComponent } from './login/inicio/inicio.component';
 import {RouterModule, Routes} from '@angular/router';
 import { PaginaComponent } from './pagina-inicial/pagina/pagina.component';
 import { CadastrarComponent } from './pagina-inicial/cadastrar/cadastrar.component';
-import { DeletarComponent } from './pagina-inicial/deletar/deletar.component';
 import { CadastraradmComponent } from './pagina-inicial/cadastraradm/cadastraradm.component';
 import { LoginadmComponent } from './login/loginadm/loginadm.component';
 import { GeneroComponent } from './pagina-inicial/genero/genero.component';
 import { EditoraComponent } from './pagina-inicial/editora/editora.component';
 import { LivroscadsComponent } from './pagina-inicial/livroscads/livroscads.component';
-// import {
-//   SocialLoginModule,
-//   AuthServiceConfig,
-//   GoogleLoginProvider
-// } from "angular-6-social-login-v2";
+import {
+  SocialLoginModule,
+  AuthServiceConfig,
+  GoogleLoginProvider
+} from "angular-6-social-login-v2";
 
 const routes: Routes=[
   {
@@ -33,11 +32,6 @@ const routes: Routes=[
   {
     path:'cadastrar',
     component : CadastrarComponent,
-    canActivate: []
-  },
-  {
-    path:'deletar',
-    component : DeletarComponent,
     canActivate: []
   },
   {
@@ -67,23 +61,24 @@ const routes: Routes=[
     path:'livroscads',
     component : LivroscadsComponent,
     canActivate: []
-  }
+  },
+
 
 
 
 ];
 
-// export function getAuthServiceConfigs() {
-//   let config = new AuthServiceConfig(
-//     [
-//       {
-//         id: GoogleLoginProvider.PROVIDER_ID,
-//         provider: new GoogleLoginProvider("214907937972-gf4q78bvlr2nhgur0bdlecchcrths7i8.apps.googleusercontent.com"),
-//       }
-//     ]
-//   )
-//   return config
-// };
+export function getAuthServiceConfigs() {
+  let config = new AuthServiceConfig(
+    [
+      {
+        id: GoogleLoginProvider.PROVIDER_ID,
+        provider: new GoogleLoginProvider("1002036984829-c8t8mtuihp6rcrbn0pi8bijt3nceoqee.apps.googleusercontent.com"),
+      }
+    ]
+  )
+  return config
+};
 
 @NgModule({
   declarations: [
@@ -91,7 +86,6 @@ const routes: Routes=[
     InicioComponent,
     PaginaComponent,
     CadastrarComponent,
-    DeletarComponent,
     CadastraradmComponent,
     LoginadmComponent,
     GeneroComponent,
@@ -102,13 +96,13 @@ const routes: Routes=[
     RouterModule.forRoot(routes),
     BrowserModule,
     FormsModule ,
-    // SocialLoginModule
+    SocialLoginModule
   ],
   providers: [
-    // {
-    //   provide: AuthServiceConfig,
-    //   useFactory: getAuthServiceConfigs
-    // }
+    {
+      provide: AuthServiceConfig,
+      useFactory: getAuthServiceConfigs
+    }
   ],
   bootstrap: [AppComponent]
 

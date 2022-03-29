@@ -16,7 +16,11 @@
       <input type="number" name="quantity" step="0.01" min="0.01" style="margin: 10px 0px 10px 0px;" placeholder="Preço" [(ngModel)] ="valor">
     </div>
     <div>
-      <input type="text" placeholder="Gênero" style="margin: 10px 0px 10px 20px;" [(ngModel)] ="genero">
+      <select type="text" placeholder="Gênero" style="margin: 10px 0px 10px 20px;" [(ngModel)] ="genero">
+      <option value=""></option>
+      <option value="" *ngFor="let lista of listaGenero">{{lista.GENERO}}</option>
+      </select>
+
       <button style="color: #FFEBCC" (click)='cadasgenero()'>CADASTRAR GÊNERO</button>
     </div>
     <div>
@@ -28,6 +32,9 @@
     </div>
     <div>
       <button style="color: #FFEBCC" (click)='cadastrar()'>CADASTRAR</button>
+    </div>
+    <div>
+      <button style="color: #FFEBCC; margin: 10px 0px 0px 66px;" (click)='voltar()'>VOLTAR</button>
     </div>
 
   </div>

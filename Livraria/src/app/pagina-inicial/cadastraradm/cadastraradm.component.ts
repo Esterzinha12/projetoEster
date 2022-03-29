@@ -16,4 +16,7 @@ export class CadastraradmComponent implements OnInit {
   cadastradoadm(){
     alert('Administrador cadastrado com sucesso!')
   }
+  voltar() {
+    this.route.navigate(['/acesso/'])
+  }
 }

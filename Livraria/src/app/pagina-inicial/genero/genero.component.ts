@@ -31,7 +31,9 @@ genero='';
   }
     }
     
-
+    voltar() {
+      this.route.navigate(['/acesso/'])
+    }
 
   
 }

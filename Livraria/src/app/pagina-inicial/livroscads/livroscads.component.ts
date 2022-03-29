@@ -12,7 +12,21 @@ export class LivroscadsComponent implements OnInit {
   constructor(private route: Router,  
     private usuarioservico: UsuarioService) { }
 
+  listaLivros=[];
+
   ngOnInit() {
+    this.usuarioservico.listarLivros()
+    .then((resultado: any) => {
+      resultado.find(valor => {
+        this.listaLivros.push(valor);
+      })
+    })
+  }
+  voltar() {
+    this.route.navigate(['/acesso/'])
   }
 
+  excluir(i){
+    this.usuarioservico.excluir_livro(i+1);
+  }
 }
