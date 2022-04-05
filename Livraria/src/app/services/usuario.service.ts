@@ -39,6 +39,7 @@ export class UsuarioService {
     })
   }
 
+  
   cadastrar(titulo, autor, valor, genero, editora, estoque) {
     return new Promise((resolvido, rejeitado) => {
       fetch('api/cadastrar',
@@ -124,6 +125,22 @@ export class UsuarioService {
         .catch(rejeitado);
     })
   }
+  excluir_genero(genero) {
+    return new Promise((resolvido, rejeitado) => {
+      fetch('api/excluir_genero',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            genero : genero
+          })
+        }).then(resultado => resultado.json())
+        .then(resolvido)
+        .catch(rejeitado);
+    })
+  }
   
   cadaseditora(editora) {
     return new Promise((resolvido, rejeitado) => {
@@ -158,23 +175,21 @@ export class UsuarioService {
         .catch(rejeitado);
     })
   }
-  
-  excluir_genero(genero) {
+  select_editora() {
     return new Promise((resolvido, rejeitado) => {
-      fetch('api/excluir_genero',
+      fetch('api/select_editora',
         {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({
-            genero : genero
-          })
         }).then(resultado => resultado.json())
         .then(resolvido)
         .catch(rejeitado);
     })
   }
+  
+  
   
   }
 

@@ -1,16 +1,27 @@
 body{
     background-color: #d3a27f;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: flex;
-    justify-content: center;
+    height: 100vh;
 }
 
+.inicio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
 a{
     font-size: 30px;
     font-weight: bold;
     color: #FFEBCC;
 
+}
+
+.divApresentar{
+    background-color: #964b00;
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20%;
 }

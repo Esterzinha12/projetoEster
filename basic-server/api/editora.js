@@ -15,7 +15,7 @@ inserirRota('/cadaseditora', function (dados, resposta) {
 inserirRota('/select_editora', (dados, resposta) => {
     console.log(dados);
     database('SELECT * FROM EDITORA ').then(result => {
-        resposta({ resposta: result });
+        resposta(result );
     }).catch(erro => {
         resposta({ resposta: erro });
     });

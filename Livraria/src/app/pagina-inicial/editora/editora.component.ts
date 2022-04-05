@@ -32,6 +32,6 @@ export class EditoraComponent implements OnInit {
     }
 
     voltar() {
-      this.route.navigate(['/acesso/'])
+      this.route.navigate(['/cadastrar/'])
     }
 }

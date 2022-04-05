@@ -1,34 +1,37 @@
 <body>
   <div>
-    <div >
+    <div>
       <img style="margin: 0px 60px 50px 8px" src="/assets/LOGO_MARCA_LOJA_SEBO_ALTERNATIVO-removebg-preview.png">
     </div>
     <a>CADASTRAR LIVROS</a>
-    
+
     <div>
-      <input type="text" placeholder="Título" style="margin: 10px 0px 10px 20px;" [(ngModel)] ="titulo">
+      <input type="text" placeholder="Título" style="margin: 10px 0px 10px 20px;" [(ngModel)]="titulo">
     </div>
     <div>
-      <input type="text" placeholder="Autor" style="margin: 10px 0px 10px 20px;" [(ngModel)] ="autor">
+      <input type="text" placeholder="Autor" style="margin: 10px 0px 10px 20px;" [(ngModel)]="autor">
     </div>
     <div>
       <label for="dinheiro">R$</label>
-      <input type="number" name="quantity" step="0.01" min="0.01" style="margin: 10px 0px 10px 0px;" placeholder="Preço" [(ngModel)] ="valor">
+      <input type="number" name="quantity" step="0.01" min="0.01" style="margin: 10px 0px 10px 0px;" placeholder="Preço"
+        [(ngModel)]="valor">
     </div>
     <div>
-      <select type="text" placeholder="Gênero" style="margin: 10px 0px 10px 20px;" [(ngModel)] ="genero">
-      <option value=""></option>
-      <option value="" *ngFor="let lista of listaGenero">{{lista.GENERO}}</option>
+      <select type="text" placeholder="Gênero" style="margin: 10px 0px 10px 20px;" [(ngModel)]="genero">
+        <option value=""></option>
+        <option *ngFor="let lista of listaGenero" [value]="lista.CODIGO">{{lista.GENERO}}</option>
       </select>
-
       <button style="color: #FFEBCC" (click)='cadasgenero()'>CADASTRAR GÊNERO</button>
     </div>
     <div>
-      <input type="text" placeholder="Editora" style="margin: 10px 0px 10px 20px;" [(ngModel)] ="editora">
+      <select type="text" placeholder="Editora" style="margin: 10px 0px 10px 20px;" [(ngModel)]="editora">
+        <option value=""></option>
+        <option *ngFor="let lista of listaEditora" [value]="lista.CODIGO">{{lista.EDITORA}}</option>
+      </select>
       <button style="color: #FFEBCC" (click)='cadaseditora()'>CADASTRAR EDITORA</button>
     </div>
     <div>
-      <input type="number" placeholder="Quantidade" style="margin: 10px 0px 10px 20px;" [(ngModel)] ="estoque">
+      <input type="number" placeholder="Quantidade" style="margin: 10px 0px 10px 20px;" [(ngModel)]="estoque">
     </div>
     <div>
       <button style="color: #FFEBCC" (click)='cadastrar()'>CADASTRAR</button>

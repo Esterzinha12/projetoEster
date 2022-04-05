@@ -16,18 +16,26 @@ export class CadastrarComponent implements OnInit {
   genero='';
   editora='';
   estoque='';
-  listaGenero={};
+  listaGenero=[];
+  listaEditora=[];
 
   constructor( private route: Router,  
     private usuarioservico: UsuarioService) { }
 
   ngOnInit() {
     this.usuarioservico.select_genero()
-    .then(resultado => {
+    .then((resultado : any )=> {
     this.listaGenero=resultado;
     console.log(this.listaGenero)
     })
+
+    this.usuarioservico.select_editora()
+    .then((resultado : any )=> {
+    this.listaEditora=resultado;
+    console.log(this.listaEditora)
+    })
   }
+
     cadastrar() {
     this.usuarioservico.cadastrar(this.titulo, this.autor, this.valor, this.genero, this.editora, this.estoque)
       .then((resultado: any) => {
@@ -35,7 +43,6 @@ export class CadastrarComponent implements OnInit {
       }).catch(erro => {
         alert('Erro ao cadastrar livro!')
       })
-     console.log(this.genero)
   }
 
   cadasgenero() {
@@ -51,5 +58,5 @@ export class CadastrarComponent implements OnInit {
   cadastrado(){
     alert('Livro cadastrado com sucesso!')
   }
-
+  
 }

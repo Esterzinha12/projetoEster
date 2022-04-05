@@ -17,6 +17,16 @@ input {
     font-size: 15px;
     border: #964b00 2px solid;
 }
+select {
+    padding: 2px;
+    width: 200px;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    border: #964b00 2px solid;
+}
 
 button {
     width: 100px;

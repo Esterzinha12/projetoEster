@@ -17,9 +17,8 @@ export class LivroscadsComponent implements OnInit {
   ngOnInit() {
     this.usuarioservico.listarLivros()
     .then((resultado: any) => {
-      resultado.find(valor => {
-        this.listaLivros.push(valor);
-      })
+    this.listaLivros=resultado.resposta;
+    console.log(this.listaLivros)
     })
   }
   voltar() {

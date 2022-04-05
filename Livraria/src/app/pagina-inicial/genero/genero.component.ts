@@ -32,7 +32,7 @@ genero='';
     }
     
     voltar() {
-      this.route.navigate(['/acesso/'])
+      this.route.navigate(['/cadastrar/'])
     }
 
   
