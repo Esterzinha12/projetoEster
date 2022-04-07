@@ -9,47 +9,55 @@
         <input type="text" placeholder="Buscar Livros">
       </div>
       <button class="butlogin" style="color: #FFEBCC" (click)='loginadm()'>LOGIN ADM</button>
-      
+
     </div>
   </header>
 
-<main>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-</main>
+  <main>
+    <a>LIVROS DISPONÍVEIS</a>
+    <div class="apresentar">
+      <div class="divApresentar" *ngFor="let livro of listaLivros; let i= index">
+        <div>
+          <h4>TÍTULO: {{livro.TITULO}}</h4>
+          <h4>AUTOR: {{livro.AUTOR}}</h4>
+          <h4>VALOR: {{livro.VALOR}}</h4>
+          <h4>QTD: {{livro.ESTOQUE}}</h4>
+        </div>
+      </div>
+    </div>
+  </main>
 
   <footer>
     <div class="redes">
       <div>
-        <img src="https://img.icons8.com/ios-glyphs/40/000000/facebook.png"/> 
-    </div>
-    <div>
-        <i class="fab fa-twitter"></i>
-    </div>
-    <div>
-        <i class="fab fa-youtube"></i>
-    </div>
-    <div>
-        <i class="fab fa-instagram"></i>
-    </div>
+        <i style="color: white; font-size: 30px;  " class="fab fa-facebook"></i>
+      </div>
+      <div>
+        <i style="color: white; font-size: 30px;" class="fab fa-twitter"></i>
+      </div>
+      <div>
+        <i style="color: white; font-size: 30px;" class="fab fa-youtube"></i>
+      </div>
+      <div>
+        <i style="color: white; font-size: 30px; " class="fab fa-instagram"></i>
+      </div>
     </div>
     <div class="divfooter">
-      <p class="sebo">SEBO ALTERNATIVO</p>
-      <p>Usado, bom e barato</p>
-      <p>Compra-Vende-Troca</p>
-      <p>Revista - livros - Gibis</p>
-      <p> Cd's - DVD's - Blu-Ray - LP's</p>
-    
-  </div>
+      <div>
+        <p class="sebo">SEBO ALTERNATIVO</p>
+        <p>Usado, bom e barato</p>
+        <p>Compra-Vende-Troca</p>
+        <p>Revista - livros - Gibis</p>
+        <p> Cd's - DVD's - Blu-Ray - LP's</p>
+      </div>
+      <div class="direita">
+        <p class="sebo">ENDEREÇO:</p>
+        <p>Avenida Getúlio Vargas, 176 - Sala 02</p>
+        <p>Bairro: Centro</p>
+        <p>Telefone: (48) 3437-3207</p>
+        <p>Cidade: Criciúma - SC</p>
+        <p>E-mail: seboalternativo@seboalternativo.com.br</p>
+      </div>
+    </div>
   </footer>
 </body>

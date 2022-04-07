@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Console } from 'console';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -26,6 +27,7 @@ export class LivroscadsComponent implements OnInit {
   }
 
   excluir(i){
-    this.usuarioservico.excluir_livro(i+1);
+    this.usuarioservico.excluir_livro(i);
+    window.location.reload();
   }
 }

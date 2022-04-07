@@ -40,15 +40,14 @@ inserirRota('/select_livros', (dados, resposta) => {
     });
 });
 
-inserirRota('/excluir_livro', function (dados, resposta) {
+inserirRota('/excluir_livro', function (dados, resposta) { 
     console.log(dados);
-    database(`DROP TABLE CADASTRARLIVRO`)
+    database(`DELETE FROM CADASTRARLIVRO WHERE CODIGO=${dados.codigo}`)
         .then(result => {
             alert('Livro deletado com sucesso!');
             resposta({ list: result });
         }).catch(erro => {
             console.log('Erro ao deletar o livro!');
-            alert({ erro: 'Erro ao deletar o livro' });
         });
 });
 

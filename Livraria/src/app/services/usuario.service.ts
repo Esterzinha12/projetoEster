@@ -80,7 +80,7 @@ export class UsuarioService {
   }
   excluir_livro(codigo) {
     return new Promise((resolvido, rejeitado) => {
-      fetch('api/excluir_genero',
+      fetch('/api/excluir_livro',
         {
           method: 'POST',
           headers: {
