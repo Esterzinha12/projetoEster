@@ -19,7 +19,7 @@ export class InicioComponent implements OnInit {
 
     listaLivros=[];
   ngOnInit() {
-    this. usuarioService.buscarUsuario()
+    this. usuarioService.select_login()
     .then(resultado => {
       console.log('RESULTADO', resultado);
     }).catch(erro =>{

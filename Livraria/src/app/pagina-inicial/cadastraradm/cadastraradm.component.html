@@ -4,20 +4,20 @@
       <img style="margin: 0px 60px 50px 8px" src="/assets/LOGO_MARCA_LOJA_SEBO_ALTERNATIVO-removebg-preview.png">
     </div>
     <a>CADASTRAR NOVO ADMINISTRADOR</a>
-    <div>
-      <input type="text" placeholder="Nome Completo" style="margin: 10px 0px 10px 20px;">
-    </div>
-    <div>
-      <input type="text" placeholder="Usuário" style="margin: 10px 0px 10px 20px;">
-    </div>
-    <div>
-      <input type="text" placeholder="Senha" style="margin: 10px 0px 10px 20px;">
-    </div>
-    <div>
-      <button style="color: #FFEBCC" (click)='cadastradoadm()'>CADASTRAR</button>
-    </div>
-    <div>
-      <button style="color: #FFEBCC; margin: 10px 0px 0px 66px;" (click)='voltar()'>VOLTAR</button>
-    </div>
+    <form action="">
+      <div>
+        <input type="text" placeholder="Usuário" style="margin: 10px 0px 10px 20px;" [(ngModel)]="usuario">
+      </div>
+      <div>
+        <input type="text" placeholder="Senha" style="margin: 10px 0px 10px 20px;" [(ngModel)]="senha">
+      </div>
+      <div>
+        <button style="color: #FFEBCC" (click)='cadastraradm()' type="reset">CADASTRAR</button>
+      </div>
+      <div>
+        <button style="color: #FFEBCC; margin: 10px 0px 0px 66px;" (click)='voltar()'>VOLTAR</button>
+      </div>
+    </form>
+   
   </div>
 </body>

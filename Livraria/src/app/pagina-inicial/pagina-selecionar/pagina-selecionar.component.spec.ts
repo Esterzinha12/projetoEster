@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PaginaComponent } from './pagina.component';
+import { PaginaComponent } from './pagina-selecionar.component';
 
 describe('PaginaComponent', () => {
   let component: PaginaComponent;

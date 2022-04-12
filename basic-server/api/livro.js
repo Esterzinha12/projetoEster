@@ -21,8 +21,8 @@ inserirRota('/cadastrar', function (dados, resposta) {
     }
 
     database(`INSERT INTO CADASTRARLIVRO(
-        TITULO, AUTOR, VALOR, GENERO_CODIGO, EDITORA_CODIGO, ESTOQUE) VALUES
-       (" ${dados.titulo}", "${dados.autor}",${dados.valor} ,${dados.genero} , ${dados.editora}, ${dados.estoque})`)
+        TITULO, AUTOR, VALOR, GENERO_CODIGO, EDITORA_CODIGO, ESTOQUE, IMAGEURL) VALUES
+       (" ${dados.titulo}", "${dados.autor}","${dados.valor}" ,"${dados.genero}" ,"${dados.editora}", "${dados.estoque}", "${dados.imageURL}")`)
        .then(result => {
            console.log('result', result);
            resposta({ user: result});

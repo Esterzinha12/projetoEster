@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './login/inicio/inicio.component';
 import {RouterModule, Routes} from '@angular/router';
-import { PaginaComponent } from './pagina-inicial/pagina/pagina.component';
+import { PaginaComponent } from './pagina-inicial/pagina-selecionar/pagina-selecionar.component';
 import { CadastrarComponent } from './pagina-inicial/cadastrar/cadastrar.component';
 import { CadastraradmComponent } from './pagina-inicial/cadastraradm/cadastraradm.component';
 import { LoginadmComponent } from './login/loginadm/loginadm.component';

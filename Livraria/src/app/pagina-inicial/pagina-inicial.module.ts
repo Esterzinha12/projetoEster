@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PaginaComponent } from './pagina/pagina.component';
+import { PaginaComponent } from './pagina-selecionar/pagina-selecionar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { CadastraradmComponent } from './cadastraradm/cadastraradm.component';
 import { GeneroComponent } from './genero/genero.component';

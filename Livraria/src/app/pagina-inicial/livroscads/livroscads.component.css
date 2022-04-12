@@ -42,3 +42,7 @@ button {
     flex-wrap: wrap;
 }
 
+.organizar{
+    display: flex;
+}
+

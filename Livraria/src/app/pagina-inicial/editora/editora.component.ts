@@ -23,6 +23,7 @@ export class EditoraComponent implements OnInit {
       .then((resultado: any) => {
         console.log(resultado)
         alert('Editora cadastrado com sucesso!')
+        this.editora=''
       }).catch(erro => {
         alert('Erro ao cadastrar editora!')
       })

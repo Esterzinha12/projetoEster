@@ -1,4 +1,4 @@
-inserirRota('/buscar_usuario', function (dados, resposta) {
+inserirRota('/select_adm', function (dados, resposta) {
     console.log(dados);
 
     database(`SELECT * FROM LOGINADM`)
@@ -11,7 +11,7 @@ inserirRota('/buscar_usuario', function (dados, resposta) {
         });
 });
 
-inserirRota('/criar_usuario', function (dados, resposta) {
+inserirRota('/criar_adm', function (dados, resposta) {
     console.log(dados);
 
     if (!dados.usuario) {
@@ -49,10 +49,9 @@ inserirRota('/excluir_adm', function (dados, resposta) {
         });
 });
 
-inserirRota('/login', function (dados, resposta) {
+inserirRota('/select_login', function (dados, resposta) {
     console.log(dados);
 
-    
     database(`SELECT * FROM LOGINADM `)
         .then(result => {
             console.log('result', result);

@@ -6,17 +6,25 @@
     <div><a>LIVROS CADASTRADOS</a></div>
   </div>
   <div class="apresentar">
-  <div class="divApresentar" *ngFor="let livro of listaLivros; let i= index">
-    <div class="text">
-      <h4>TÍTULO: {{livro.TITULO}}</h4>
-      <h4>AUTOR: {{livro.AUTOR}}</h4>
-      <h4>VALOR: {{livro.VALOR}}</h4>
-      <h4>QTD: {{livro.ESTOQUE}}</h4>
-    </div>
+    <div class="divApresentar" *ngFor="let livro of listaLivros; let i= index">
+      <div class="organizar">
+        <div class="text">
+          <h4>TÍTULO: {{livro.TITULO}}</h4>
+          <h4>AUTOR: {{livro.AUTOR}}</h4>
+          <h4>VALOR: {{livro.VALOR}}</h4>
+          <h4>QTD: {{livro.ESTOQUE}}</h4>
+        </div>
+        <div>
+          <img style="float:right;"[src]="livro.IMAGEURL">
+        </div>
+      </div>
 
-      <button (click)='excluir(livro.CODIGO)'>EXCLUIR</button>
-      <button (click)='editar(i)'>EDITAR</button>
-  </div>
+
+      <div>
+        <button (click)='excluir(livro.CODIGO)'>EXCLUIR</button>
+        <button (click)='editar(i)'>EDITAR</button>
+      </div>
+    </div>
   </div>
 
 

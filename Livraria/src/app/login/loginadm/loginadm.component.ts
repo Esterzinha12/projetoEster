@@ -26,7 +26,7 @@ export class LoginadmComponent implements OnInit {
   senha = '';
 
   acesso() {
-    this.usuarioservico.login(this.usuario, this.senha)
+    this.usuarioservico.select_login(this.usuario, this.senha)
       .then((resultado: any) => {
         if (resultado.user) {
           console.log('certo');
@@ -35,7 +35,7 @@ export class LoginadmComponent implements OnInit {
           alert('Erro ao fazer login! Verifique usuario e senha')
         }
       }).catch(erro => {
-        console.log('Erro ao buscar usuarios', erro)
+        console.log('Erro ao buscar usuarios')
       })
   }
 

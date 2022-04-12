@@ -7,23 +7,28 @@ export class UsuarioService {
 
   constructor() { }
 
-  buscarUsuario() {
+  criar_adm(usuario, senha) {
     return new Promise((resolvido, rejeitado) => {
-      fetch('api/buscar_usuario',
+      fetch('api/criar_adm',
         {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
-          }
+          },
+          body: JSON.stringify({
+            usuario: usuario,
+            senha: senha,
+            
+          })
         }).then(resultado => resultado.json())
         .then(resolvido)
         .catch(rejeitado);
     })
   }
-
-  login(usuario, senha) {
+  
+  select_login(usuario, senha) {
     return new Promise((resolvido, rejeitado) => {
-      fetch('api/login',
+      fetch('api/select_login',
         {
           method: 'POST',
           headers: {
@@ -40,7 +45,7 @@ export class UsuarioService {
   }
 
   
-  cadastrar(titulo, autor, valor, genero, editora, estoque) {
+  cadastrar(titulo, autor, valor, genero, editora, estoque, imageURL) {
     return new Promise((resolvido, rejeitado) => {
       fetch('api/cadastrar',
         {
@@ -54,7 +59,8 @@ export class UsuarioService {
             valor: valor,
             genero: genero,
             editora: editora,
-            estoque: estoque
+            estoque: estoque,
+            imageURL:imageURL
           })
         }).then(resultado => resultado.json())
         .then(resolvido)
@@ -188,7 +194,7 @@ export class UsuarioService {
         .catch(rejeitado);
     })
   }
-  
+ 
   
   
   }

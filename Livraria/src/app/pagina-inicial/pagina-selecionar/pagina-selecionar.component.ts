@@ -4,8 +4,8 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pagina',
-  templateUrl: './pagina.component.html',
-  styleUrls: ['./pagina.component.css']
+  templateUrl: './pagina-selecionar.component.html',
+  styleUrls: ['./pagina-selecionar.component.css']
 })
 export class PaginaComponent implements OnInit {
 

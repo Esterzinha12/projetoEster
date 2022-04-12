@@ -17,7 +17,8 @@ export class CadastrarComponent implements OnInit {
   editora='';
   estoque='';
   listaGenero=[];
-  listaEditora=[];
+  listaEditora=[]; 
+  imageURL
 
   constructor( private route: Router,  
     private usuarioservico: UsuarioService) { }
@@ -35,15 +36,33 @@ export class CadastrarComponent implements OnInit {
     console.log(this.listaEditora)
     })
   }
-
+ 
+  mostrarImagem(event) {
+  const file = new FileReader
+  file.onload = (e) => {
+    this.imageURL = e.target.result;
+    console.log(this.imageURL)
+  }
+  file.readAsDataURL(event.target.files[0])
+  console.log(file)
+}
     cadastrar() {
-    this.usuarioservico.cadastrar(this.titulo, this.autor, this.valor, this.genero, this.editora, this.estoque)
+    this.usuarioservico.cadastrar(this.titulo, this.autor, this.valor, this.genero, this.editora, this.estoque, this.imageURL)
       .then((resultado: any) => {
         alert('Livro cadastrado com sucesso!')
+        this.titulo=''
+        this.autor=''
+        this.valor=''
+        this.genero=''
+        this.editora=''
+        this.estoque=''
+        this.imageURL
+
       }).catch(erro => {
-        alert('Erro ao cadastrar livro!')
+        console.log(erro)
       })
   }
+  
 
   cadasgenero() {
     this.route.navigate(['/genero/'])

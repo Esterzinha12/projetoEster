@@ -23,6 +23,7 @@ genero='';
       .then((resultado: any) => {
         console.log(resultado)
         alert('Genero cadastrado com sucesso!')
+        this.genero=''
       }).catch(erro => {
         alert('Erro ao cadastrar genero!')
       })
