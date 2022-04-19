@@ -114,10 +114,16 @@ button {
     margin: 1%;
     font-size: 20px;
     font-weight: bold;
+    border-radius: 40px;
 } 
 .apresentar{
     display: flex;
     flex-wrap: wrap;
+}
+
+.organizar{
+    display: flex;
+    justify-content: space-between;
 }
 
 .divfooter{

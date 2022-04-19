@@ -14,20 +14,20 @@
           <h4>VALOR: {{livro.VALOR}}</h4>
           <h4>QTD: {{livro.ESTOQUE}}</h4>
         </div>
-        <div>
-          <img style="float:right;"[src]="livro.IMAGEURL">
+        <div style="display: flex; justify-content: right;">
+          <img style="width: 20vh; height: 20vh;"[src]="livro.IMAGEURL">
         </div>
       </div>
-
-
       <div>
-        <button (click)='excluir(livro.CODIGO)'>EXCLUIR</button>
-        <button (click)='editar(i)'>EDITAR</button>
+        <button class="buttonDiv"(click)='excluir(livro.CODIGO)'>EXCLUIR</button>
+        <button class="buttonDiv" (click)='editar(livro.CODIGO)'>EDITAR</button>
       </div>
     </div>
   </div>
 
-
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <button class= "buttonFora " (click)='voltar()'>VOLTAR</button>
+  </div>
 
 
 

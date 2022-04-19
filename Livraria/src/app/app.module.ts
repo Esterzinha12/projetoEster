@@ -12,11 +12,13 @@ import { LoginadmComponent } from './login/loginadm/loginadm.component';
 import { GeneroComponent } from './pagina-inicial/genero/genero.component';
 import { EditoraComponent } from './pagina-inicial/editora/editora.component';
 import { LivroscadsComponent } from './pagina-inicial/livroscads/livroscads.component';
+import { CheckLogged } from './checkLogged';
 import {
   SocialLoginModule,
   AuthServiceConfig,
   GoogleLoginProvider
 } from "angular-6-social-login-v2";
+import { EditarLivroComponent } from './pagina-inicial/editar-livro/editar-livro.component';
 
 const routes: Routes=[
   {
@@ -27,7 +29,7 @@ const routes: Routes=[
   {
     path:'acesso',
     component : PaginaComponent,
-    canActivate: []
+    canActivate: [CheckLogged]
   },
   {
     path:'cadastrar',
@@ -62,6 +64,11 @@ const routes: Routes=[
     component : LivroscadsComponent,
     canActivate: []
   },
+  {
+    path:'editarlivro',
+    component : EditarLivroComponent,
+    canActivate: []
+  },
 
 
 
@@ -90,7 +97,8 @@ export function getAuthServiceConfigs() {
     LoginadmComponent,
     GeneroComponent,
     EditoraComponent,
-    LivroscadsComponent
+    LivroscadsComponent,
+    EditarLivroComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -102,7 +110,9 @@ export function getAuthServiceConfigs() {
     {
       provide: AuthServiceConfig,
       useFactory: getAuthServiceConfigs
-    }
+      
+    },
+    [CheckLogged]
   ],
   bootstrap: [AppComponent]
 

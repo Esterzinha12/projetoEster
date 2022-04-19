@@ -68,7 +68,7 @@ export class UsuarioService {
     })
   }
 
-  listarLivros() {
+  listarLivros(codigo) {
     return new Promise((resolvido, rejeitado) => {
       fetch('api/select_livros',
         {
@@ -195,6 +195,23 @@ export class UsuarioService {
     })
   }
  
+  editar_livro(codigo,estoque) {
+    return new Promise((resolvido, rejeitado) => {
+      fetch('api/editar_livro',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            estoque,
+            codigo
+          })
+        }).then(resultado => resultado.json())
+        .then(resolvido)
+        .catch(rejeitado);
+    })
+  }
   
   
   }

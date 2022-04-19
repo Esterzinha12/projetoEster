@@ -34,7 +34,7 @@ inserirRota('/cadastrar', function (dados, resposta) {
 inserirRota('/select_livros', (dados, resposta) => {
     console.log(dados);
     database(`SELECT * FROM CADASTRARLIVRO `).then(result => {
-        resposta({ resposta: result });
+        resposta(result );
     }).catch(erro => {
         resposta({ resposta: erro });
     });
@@ -48,6 +48,17 @@ inserirRota('/excluir_livro', function (dados, resposta) {
             resposta({ list: result });
         }).catch(erro => {
             console.log('Erro ao deletar o livro!');
+        });
+});
+
+inserirRota('/editar_livro', function (dados, resposta) { 
+    console.log(dados);
+    database(`UPDATE CADASTRARLIVRO SET ESTOQUE = ${dados.estoque} WHERE CODIGO = ${dados.codigo}`)
+        .then(result => {
+            alert('Livro editado com sucesso!');
+            resposta({ list: result });
+        }).catch(erro => {
+            console.log('Erro ao editar o livro!');
         });
 });
 

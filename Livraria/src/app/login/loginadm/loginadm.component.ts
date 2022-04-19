@@ -28,12 +28,15 @@ export class LoginadmComponent implements OnInit {
   acesso() {
     this.usuarioservico.select_login(this.usuario, this.senha)
       .then((resultado: any) => {
+        
         if (resultado.user) {
+          localStorage.setItem("User", "1");
           console.log('certo');
           this.route.navigate(['/acesso/']);
         } else {
           alert('Erro ao fazer login! Verifique usuario e senha')
         }
+
       }).catch(erro => {
         console.log('Erro ao buscar usuarios')
       })
@@ -48,6 +51,7 @@ export class LoginadmComponent implements OnInit {
     this.socialAuthService.signIn(socialPlatformProvider).then(
     (userData) => {
       console.log(socialPlatform + " sign in data : ", userData);
+        localStorage.setItem("google?", "1");
         this.route.navigate(['/acesso/'])
     }
   );

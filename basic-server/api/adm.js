@@ -52,18 +52,14 @@ inserirRota('/excluir_adm', function (dados, resposta) {
 inserirRota('/select_login', function (dados, resposta) {
     console.log(dados);
 
-    database(`SELECT * FROM LOGINADM `)
-        .then(result => {
-            console.log('result', result);
-        }).catch(erro => {
-        });
-
     database(`SELECT * FROM LOGINADM WHERE USUARIO = "${dados.usuario}" AND SENHA= "${dados.senha}" LIMIT 1`)
         .then(result => {
             console.log('result', result);
             resposta({ user: result[0]});
         }).catch(erro => {
+            console.log(erro);
             resposta({ erro: 'Erro ao buscar o usuario!' });
+
         });
 });
 

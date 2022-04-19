@@ -17,11 +17,16 @@
     <a>LIVROS DISPONÍVEIS</a>
     <div class="apresentar">
       <div class="divApresentar" *ngFor="let livro of listaLivros; let i= index">
-        <div>
-          <h4>TÍTULO: {{livro.TITULO}}</h4>
-          <h4>AUTOR: {{livro.AUTOR}}</h4>
-          <h4>VALOR: {{livro.VALOR}}</h4>
-          <h4>QTD: {{livro.ESTOQUE}}</h4>
+        <div class="organizar">
+          <div class="text">
+            <h4>TÍTULO: {{livro.TITULO}}</h4>
+            <h4>AUTOR: {{livro.AUTOR}}</h4>
+            <h4>VALOR: {{livro.VALOR}}</h4>
+            <h4>QTD: {{livro.ESTOQUE}}</h4>
+          </div>
+          <div style="display: flex; justify-content: right;">
+            <img style="width: 20vh; height: 20vh;"[src]="livro.IMAGEURL">
+          </div>
         </div>
       </div>
     </div>

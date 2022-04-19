@@ -16,14 +16,24 @@ a{
     color: #FFEBCC;
 
 }
-.buttonDiv {
+button {
     width: 100px;
     height: 40px;
     border-radius: 10px;
     background-color: #d3a27f;
     border: solid  0px;
-    float: right;
+    float: left;
     margin: 1%;
+}
+input {
+    padding: 2px;
+    width: 150px;
+    height: 20px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    border: #964b00 2px solid;
 }
 .buttonFora{
     width: 100px;
@@ -57,4 +67,3 @@ a{
     display: flex;
     justify-content: space-between;
 }
-

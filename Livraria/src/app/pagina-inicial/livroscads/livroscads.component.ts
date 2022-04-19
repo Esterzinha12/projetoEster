@@ -13,11 +13,11 @@ export class LivroscadsComponent implements OnInit {
     private usuarioservico: UsuarioService) { }
 
   listaLivros=[];
-
+    codigo=''
   ngOnInit() {
-    this.usuarioservico.listarLivros()
+    this.usuarioservico.listarLivros(this.codigo)
     .then((resultado: any) => {
-    this.listaLivros=resultado.resposta;
+    this.listaLivros=resultado;
     console.log(this.listaLivros)
     })
   }
@@ -28,5 +28,9 @@ export class LivroscadsComponent implements OnInit {
   excluir(i){
     this.usuarioservico.excluir_livro(i);
     window.location.reload();
+  }
+  editar(i){
+    localStorage.setItem("CODIGO_LIVRO", i)
+    this.route.navigate(['/editarlivro/'])
   }
 }

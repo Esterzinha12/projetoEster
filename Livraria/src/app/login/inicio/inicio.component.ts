@@ -18,17 +18,13 @@ export class InicioComponent implements OnInit {
     private route: Router) { }
 
     listaLivros=[];
+    codigo=''
+    
   ngOnInit() {
-    this. usuarioService.select_login()
-    .then(resultado => {
-      console.log('RESULTADO', resultado);
-    }).catch(erro =>{
-      console.log('ERRO AO BUSCAR USUARIO:', erro);
-    })
 
-    this.usuarioService.listarLivros()
+    this.usuarioService.listarLivros(this.codigo)
     .then((resultado: any) => {
-    this.listaLivros=resultado.resposta;
+    this.listaLivros=resultado;
     console.log(this.listaLivros)
     })
   }

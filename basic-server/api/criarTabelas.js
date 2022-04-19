@@ -1,12 +1,13 @@
 
 database(`CREATE TABLE IF NOT EXISTS LOGINADM (
     CODIGO INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    USUARIO VARCHAR(45) NOT NULL PRIMARY KEY ,
+    USUARIO VARCHAR(45) NOT NULL,
     SENHA VARCHAR(45) NOT NULL
     )`).then(result => {
 
 console.log('TABELA LOGINADM CRIADA COM SUCESSO!');
 }).catch(erro => {
+    console.log(erro);
 console.log('TABELA LOGINADM COM ERRO!');
 });
 
